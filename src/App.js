@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {CORE_CONCEPTS} from "./data";
+import Header from "./components/header/Header";
+import CoreConcept from "./components/CoreConcept";
+import TabButton from "./components/TabButton";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div>
+            <Header/>
+            <main>
+                <section id="core-concepts">
+                <h2>Time to get started!</h2>
+                <ul>
+                    <CoreConcept {...CORE_CONCEPTS[0]}/>
+                    <CoreConcept {...CORE_CONCEPTS[1]}/>
+                    <CoreConcept {...CORE_CONCEPTS[2]}/>
+                    <CoreConcept {...CORE_CONCEPTS[3]}/>
+                </ul>
+                </section>
+                <section id="examples">
+                    <h2>Examples</h2>
+                    <menu>
+                        <TabButton>Components</TabButton>
+                    </menu>
+                </section>
+            </main>
+        </div>
+    );
 }
 
 export default App;
